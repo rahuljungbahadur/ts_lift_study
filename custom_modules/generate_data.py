@@ -130,4 +130,16 @@ class GenerateData:
 
 
         return output_df
+
+
+    def plot_mean_sales(self, df):
+        """
+        Plots the mean sales for the treatment and control group
+        """
+        fig, ax = plt.subplots(figsize=(15, 8))
+        sns.lineplot(data=df, x='date', y='dollar_sales', hue='is_exposed', ax=ax)
+        ax.set_title('Mean Sales')
+        ax.set_ylabel('Dollar Sales')
+        ax.set_xlabel('Date')
+        plt.show()
      
